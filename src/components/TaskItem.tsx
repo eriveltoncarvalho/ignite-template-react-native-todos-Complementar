@@ -20,19 +20,19 @@ export function TaskItem({ task, editTask, removeTask, toggleTaskDone }: TaskIte
   const [taskNewTitleValue, setTaskNewTitleValue] = useState(task);
   const textInputRef = useRef<TextInput>(null);
 
-  function handleStartEditing() {
-    setIsEditing(true);    
-  }
+//   function handleStartEditing() {
+//     setIsEditing(true);    
+//   }
 
-  function handleCancelEditing() {
-    setTaskNewTitleValue(task.title);  
-    setIsEditing(false);
-  }
+//   function handleCancelEditing() {
+//     setTaskNewTitleValue(task.title);  
+//     setIsEditing(false);
+//   }
 
-  function handleSubmitEdting() {
-   editTask({taskId: task.id, taskNewTitle: taskNewTitleValue});
-   setIsEditing(false);
-  }
+//   function handleSubmitEdting() {
+//    editTask({taskId: task.id, taskNewTitle: taskNewTitleValue});
+//    setIsEditing(false);
+//   }
 
 
   useEffect(() => {
@@ -71,14 +71,7 @@ export function TaskItem({ task, editTask, removeTask, toggleTaskDone }: TaskIte
                   {task.title}
                 </Text> */}
 
-                <TextInput 
-                    ref={textInputRef}
-                    style={ task.done ? styles.taskTextDone : styles.taskText}
-                    value={taskNewTitleValue}
-                    editable={isEditing}
-                    onChangeText={setTaskNewTitleValue}
-                    onSubmitEditing={handleSubmitEditing}
-                />
+               
               </TouchableOpacity>
             </View>
 
